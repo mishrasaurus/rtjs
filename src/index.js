@@ -6,7 +6,7 @@ const applySnapShots = ( snapShots, store, matcherFn ) => {
 
   snapShots.actions.forEach( act => store.dispatch( act ) );
 
-  matcherFn || ( matcherFn = isEqual);
+  matcherFn || ( matcherFn = _isEqual);
   let matched = matcherFn( snapShots.lastState, store.getState() );
 
   if ( matched ) {
